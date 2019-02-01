@@ -1,0 +1,62 @@
+
+
+
+.NavBar > ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #AFD7CD;
+    display: flex;
+ flex-direction: row;
+ justify-content: space-between
+
+  }
+  
+  li {
+justify-content: space-between;
+padding: 0px 30px;
+  }
+  
+  li div {
+    display: block;
+    color: black;
+    text-align: center;
+    padding: 14px 16px;
+  }
+  
+  .profile{
+      width: 30%;
+      margin: 0;
+      padding: 20px;
+      background-color: rgb(195, 193, 193);
+      text-align: center;
+      justify-content: space-between;
+      height: 70%;
+      position:absolute; 
+
+  }
+
+.bttn{
+    box-shadow:0 2px 2px 0 rgba(0,0,0,0.14),0 3px 1px -2px rgba(0,0,0,0.12),0 1px 5px 0 rgba(0,0,0,0.2);
+    height:54px;
+    font-size:15px;
+    padding:0 28px;
+    width: 150px;
+    text-align: center;
+    background-color: #AFD7CD;
+    position: absolute;
+    bottom: 200px;
+    right: 50px;
+
+}
+
+.home{
+    background-image: url(https://thumbs.dreamstime.com/b/trees-planted-recycled-plastic-bottles-planted-bottle-plastic-recycle-trees-planted-recycled-plastic-bottles-119793972.jpg);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    height: 90%;
+    width: 100%;
+    position:absolute; 
+}
