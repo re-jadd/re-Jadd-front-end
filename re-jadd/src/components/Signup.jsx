@@ -9,7 +9,7 @@ const Signup = ({ renderInput, handleSubmit }) => {
         {renderInput("password", "Password", "password")}
         {renderInput("phone", "Phone")}
         {renderInput("location", "Location")}
-
+        
         <button className="btn btn-primary"> SignUp </button>
       </form>
     </div>
