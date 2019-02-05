@@ -1,5 +1,5 @@
 import React from "react";
-import Map from "./Map";
+import Map from "./Map/Map";
 
 const Signup = ({ renderInput, handleSubmit }) => {
   return (
@@ -13,7 +13,7 @@ const Signup = ({ renderInput, handleSubmit }) => {
 
         <button className="btn btn-primary"> SignUp </button>
       </form>
-      <Map/>
+      {/* <Map/> */}
     </div>
   );
 };
