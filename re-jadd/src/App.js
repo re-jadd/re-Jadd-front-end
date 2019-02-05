@@ -120,7 +120,11 @@ class App extends Component {
   getProducts = () => { };
 
   renderShow() {
+    if(this.state.user === true){
+      
+    }
     if (this.state.activePage === 'profile' && this.state.user) {
+      console.log(this.state.user)
       return (
         <div className="profile">
           <Profile user={this.state.user} handleEdit={this.handleEdit.bind(this)} handleRequest={this.handleRequest.bind(this)} />
