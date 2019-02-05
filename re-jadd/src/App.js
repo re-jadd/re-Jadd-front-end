@@ -4,14 +4,90 @@ import NavBar from "./components/NavBar";
 import AuthForm from "./components/AuthForm";
 import Profile from "./components/Profile";
 import "./App.css";
+import { setJwt, getJwt } from "./services/authService";
 
 class App extends Component {
   constructor() {
     super();
     this.state = {
       user: null,
-      form: "signup"
+      form: "signup",
+      editData: null,
+      newRequest: null,
+      activePage: "home"
     };
+  }
+
+  handleEdit(data) {
+    console.log(data)
+    this.setState({
+      editData: data
+    }, function () {
+      this.updateProfile(data)
+    });
+  }
+
+  handleRequest(data) {
+    /* this.setState({
+      newRequest: data
+    }) */
+    this.createRequest(data)
+  }
+
+  changeActivePage = (activePage) => {
+
+    console.log("\n\n\n\n &&&&&&&&& \n\n\n your are in ", activePage)
+    this.setState({ activePage })
+  }
+  updateProfile(data) {
+    console.log(data)
+    const url = `http://localhost:3000/rapi/users/${data.id}`;
+    fetch(url, {
+      method: 'PUT',
+      headers: {
+        "Content-Type": "application/json",
+        "x-auth-token": getJwt()
+      },
+      body: JSON.stringify(data)
+    })
+      .then(response => response.json())
+      .then(data => {
+        console.log(data)
+        setJwt(data.token);
+
+
+        this.login();
+
+
+        this.setState({ user: data.user })
+        this.changeActivePage("profile")
+        console.log("****************", this.state.user, data.user)
+      })
+      .catch(error => {
+        console.log(error)
+      })
+  }
+
+  createRequest(data) {
+    console.log(data)
+    const url = 'http://localhost:3000/rapi/order'
+    fetch(url, {
+      method: 'POST',
+      headers: {
+        "Content-Type": "application/json",
+        "x-auth-token": getJwt()
+      },
+      body: JSON.stringify(data)
+    })
+      .then(response => response.json())
+      .then(data => {
+        console.log(data)
+        this.login();
+        setJwt(data.token);
+      })
+      .catch(error => {
+        console.log(error);
+      })
   }
 
   checkForUser() {
@@ -43,25 +119,50 @@ class App extends Component {
 
   getProducts = () => { };
 
+  renderShow() {
+    if (this.state.activePage === 'profile' && this.state.user) {
+      return (
+        <div className="profile">
+          <Profile user={this.state.user} handleEdit={this.handleEdit.bind(this)} handleRequest={this.handleRequest.bind(this)} />
+        </div>
+      )
+    } else if (this.state.user === null) {
+      return (
+      <div>
+        <AuthForm form={this.state.form} onLogin={this.login} />
+      </div>
+      )
+    }
+  }
+
   render() {
     return (
       <div>
         <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
         <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
         <header>
-          <img src="" />
+
           <NavBar
             user={this.state.user}
             changeForm={this.changeForm}
             logout={this.logout}
             getProducts={this.getProducts}
+            changeActivePage={this.changeActivePage}
           />
         </header>
         <div className="home">
 
           <div className="container">
-            {this.state.user ? (
-              <div className="profile"> <Profile user={this.state.user} /></div>
+
+          {this.renderShow()}
+
+            {/* { this.state.activePage === "profile" ? }
+          */}
+             {/* {this.state.activePage === 'profile' ? <Profile user={this.state.user} handleEdit={this.handleEdit.bind(this)} handleRequest={this.handleRequest.bind(this)} /> : ''} */} */}
+             {/* {this.state.user ? (
+              <div className="profile">
+
+                <Profile user={this.state.user} handleEdit={this.handleEdit.bind(this)} handleRequest={this.handleRequest.bind(this)} /></div>
             ) : (<div>
               <AuthForm form={this.state.form} onLogin={this.login} />
               <div >
@@ -69,7 +170,7 @@ class App extends Component {
                 {!this.state.user && (<div className="bttn" onClick={() => this.changeForm("signup")}> <h3>Start Recycling</h3></div>)}
               </div>
             </div>
-              )}
+              )} */}
           </div>
         </div>
       </div>

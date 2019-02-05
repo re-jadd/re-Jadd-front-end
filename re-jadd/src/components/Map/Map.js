@@ -55,14 +55,14 @@ export class MapContainer extends Component {
         }}
       > */}
       <Marker
-          onClick={this.onMarkerClick}
+          onClick={()=> this.onMarkerClick}
           name={'Kenyatta International Convention Centre'}
         />
 
       <InfoWindow
           marker={this.state.activeMarker}
           visible={this.state.showingInfoWindow}
-          onClose={this.onClose}
+          onClose={()=> this.onClose}
         >
         <div>
             <h4>{this.state.selectedPlace.name}</h4>

@@ -20,6 +20,7 @@ export class CurrentLocation extends React.Component {
                 lng: lng
             }
         };
+        //console.log(lat+','+lng)
     }
 
     componentDidUpdate(prevProps, prevState) {
@@ -41,6 +42,8 @@ export class CurrentLocation extends React.Component {
                             lat: coords.latitude,
                             lng: coords.longitude
                         }
+                    }, function(){
+                        this.props.handleLocation(coords);
                     });
                 });
             }
@@ -51,7 +54,7 @@ export class CurrentLocation extends React.Component {
     recenterMap() {
         const map = this.map;
         const current = this.state.currentLocation;
-
+        console.log(current)
         const google = this.props.google;
         const maps = google.maps;
 
@@ -123,8 +126,8 @@ export default CurrentLocation;
 CurrentLocation.defaultProps = {
     zoom: 14,
     initialCenter: {
-        lat: -1.2884,
-        lng: 36.8233
+        lat: 24.665633699999997,
+        lng: 46.6765423
     },
     centerAroundCurrentLocation: false,
     visible: true

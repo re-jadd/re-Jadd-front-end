@@ -1,6 +1,6 @@
 import React from "react";
 import logo from "../jddlogo.png";
-const NavBar = ({ user, changeForm, logout, getProducts }) => {
+const NavBar = ({ user, changeForm, logout, getProducts , changeActivePage }) => {
     return (
         <div>
         <nav className="navbar navbar-expand-lg navbar-light bg-light">
@@ -13,24 +13,24 @@ const NavBar = ({ user, changeForm, logout, getProducts }) => {
                     {// if the user is not authenticated
                         !user && (
                             <React.Fragment>
-                                <li onClick={() => getProducts()}>
+                                <li onClick={() => {getProducts() ; changeActivePage("home")} }>
                                     <div >Why Recycling?</div>
                                 </li>
-                                <li  onClick={() =>  changeForm("signup")}>
-                                <div>Pickup Services</div>
+                                <li  onClick={() =>  { changeForm("services") ;  changeActivePage("profile") }}>
+                                <div>Profile</div>
                             </li>
 
-                                <li onClick={() => getProducts()}>
+                                <li onClick={() => {getProducts() ;  changeActivePage("guide")}}>
                                     <div >Recycling Guide</div>
                                 </li>
 
-                                <li onClick={() => changeForm("signup")}
+                                <li onClick={() => {changeForm("signup") ;  changeActivePage("signup")}}
                                 >
                                     <div>Signup</div>
                                 </li>
                                 <li
                                     className="nav-item active"
-                                    onClick={() => changeForm("login")}
+                                    onClick={() => {changeForm("login")  ;  changeActivePage("login")}}
                                 >
                                     <div>Login</div>
                                 </li>
@@ -38,17 +38,17 @@ const NavBar = ({ user, changeForm, logout, getProducts }) => {
                         )}
                     {user && (
                         <React.Fragment>
-                            <li className="nav-item active" onClick={() => getProducts()}>
+                            <li className="nav-item active" onClick={() => {getProducts()  ;  changeActivePage("home")}}>
                                 <div>Why Recycling?</div>
                             </li>
 
-                            <li className="nav-item active" onClick={() => getProducts()}>
-                                <div>Pickup Services</div>
+                            <li className="nav-item active" onClick={() => {getProducts()  ;  changeActivePage("profile")}}>
+                                <div>Profile</div>
                             </li>
-                            <li className="nav-item active" onClick={() => getProducts()}>
+                            <li className="nav-item active" onClick={() => { getProducts() ;  changeActivePage("guide")}}>
                                 <div>Recycling Guide</div>
                             </li>
-                            <li className="nav-item active" onClick={() => logout()}>
+                            <li className="nav-item active" onClick={() => { logout() ;  changeActivePage("logout")}}>
                                 <div>Logout</div>
                             </li>
                         </React.Fragment>

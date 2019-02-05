@@ -3,7 +3,7 @@ import React from "react";
 const Input = ({ name, lable, ...rest }) => {
   return (
     <div className="form-group">
-      <lable>{lable}</lable>
+      <div>{lable}</div>
       <input {...rest} name={name} className="form-control" />
     </div>
   );

@@ -12,7 +12,20 @@ class Profile extends Component {
     }
   }
 
+  handleEdit(data){
+    this.props.handleEdit(data)
+    this.changeShow()
+    //console.log(data)
+  }
+
+  handleRequest(data){
+    this.props.handleRequest(data)
+ 
+  }
+
   showProfile() {
+    console.log("***********");
+    console.log(this.props.user)
     return (
       <div >
         <button onClick={() => this.changeShow()}>Edit</button>
@@ -33,8 +46,8 @@ class Profile extends Component {
   render() {
     return (
       <div >
-        {this.state.showProfile ? this.showProfile() : <EditProfile user={this.props.user}/>}
-        <CreateReguest user={this.props.user} />
+        {this.state.showProfile ? this.showProfile() : <EditProfile user={this.props.user} handleEdit={this.handleEdit.bind(this)} />}
+        <CreateReguest user={this.props.user} handleRequest={this.handleRequest.bind(this)} />
       </div>
     );
   }
