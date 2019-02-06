@@ -5,6 +5,7 @@ import AuthForm from "./components/AuthForm";
 import Profile from "./components/Profile";
 import "./App.css";
 import { setJwt, getJwt } from "./services/authService";
+import AdminShow from './components/Admin/AdminShow';
 
 class App extends Component {
   constructor() {
@@ -83,7 +84,6 @@ class App extends Component {
       .then(data => {
         console.log(data)
         this.login();
-        setJwt(data.token);
       })
       .catch(error => {
         console.log(error);
@@ -120,14 +120,22 @@ class App extends Component {
   getProducts = () => { };
 
   renderShow() {
-    if(this.state.user === true){
-      
+    if (this.state.user) {
+      if(this.state.user.is_admin === true){
+        return (
+          <div>
+            <AdminShow />
+          </div>
+        )
+      } 
     }
+    console.log(this.state)
     if (this.state.activePage === 'profile' && this.state.user) {
       console.log(this.state.user)
       return (
         <div className="profile">
           <Profile user={this.state.user} handleEdit={this.handleEdit.bind(this)} handleRequest={this.handleRequest.bind(this)} />
+          {/* <AdminShow/> */}
         </div>
       )
     } else if (this.state.user === null) {
@@ -158,11 +166,11 @@ class App extends Component {
 
           <div className="container">
 
-          {this.renderShow()}
+          {this.state ?  this.renderShow() : <AuthForm form={this.state.form} onLogin={this.login} />}
 
             {/* { this.state.activePage === "profile" ? }
           */}
-             {/* {this.state.activePage === 'profile' ? <Profile user={this.state.user} handleEdit={this.handleEdit.bind(this)} handleRequest={this.handleRequest.bind(this)} /> : ''} */} */}
+             {/* {this.state.activePage === 'profile' ? <Profile user={this.state.user} handleEdit={this.handleEdit.bind(this)} handleRequest={this.handleRequest.bind(this)} /> : ''} */}
              {/* {this.state.user ? (
               <div className="profile">
 
