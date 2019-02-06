@@ -25,18 +25,59 @@ padding: 0px 30px;
     padding: 14px 16px;
   }
   
-  .profile{
-      width: 30%;
+  .content {
+width: 100%;
+height:100%
+  }
+  input[type=submit]:hover {
+    background-color: #45a049;
+  }
+  
+  .pr{
+      width:30%;
       margin: 0;
-      padding: 20px;
+      padding: 40px;
       background-color: rgb(195, 193, 193);
       text-align: center;
       justify-content: space-between;
-      height: 70%;
+      height: 90%;
       position:absolute; 
+      float: left;
 
   }
-
+.order{
+float: right;
+padding: 40px;
+width:70%;
+justify-content: space-between;
+text-align: center;
+align-items: center;
+align-self: center
+}
+input, select, textarea {
+    width: 70%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    resize: vertical;
+  }
+  
+  label {
+    padding: 12px 12px 12px 0;
+    display: inline-block;
+  }
+  .btnsub {
+    width: 30%;
+    background-color:  rgb(100, 151, 139);
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    align-items: 
+  }
+  
 .bttn{
     box-shadow:0 2px 2px 0 rgba(0,0,0,0.14),0 3px 1px -2px rgba(0,0,0,0.12),0 1px 5px 0 rgba(0,0,0,0.2);
     height:54px;
@@ -50,9 +91,19 @@ padding: 0px 30px;
     right: 50px;
 
 }
-
+.btn{
+    height:54px;
+    font-size:15px;
+    padding:0 28px;
+    width: 150px;
+    text-align: center;
+    background-color: rgb(207, 219, 216);
+    position: absolute;
+    top: 0;
+    right:0;
+}
 .home{
-    background-image: url(https://thumbs.dreamstime.com/b/trees-planted-recycled-plastic-bottles-planted-bottle-plastic-recycle-trees-planted-recycled-plastic-bottles-119793972.jpg);
+    /* background-image: url(https://thumbs.dreamstime.com/b/trees-planted-recycled-plastic-bottles-planted-bottle-plastic-recycle-trees-planted-recycled-plastic-bottles-119793972.jpg); */
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-size: cover;

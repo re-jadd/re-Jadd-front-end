@@ -29,7 +29,7 @@ class CreateReguest extends Component {
 
     render() {
         return (
-            <div>
+            <div className="order">
                 <form onSubmit={this.handleSubmit.bind(this)}>
                     <input type="radio" name="type" value="Plastic" onChange={this.handleChange.bind(this)} />Plastic <br />
                     <input type="radio" name="type" value="Paper" onChange={this.handleChange.bind(this)} />Paper <br />
@@ -38,7 +38,7 @@ class CreateReguest extends Component {
                     <div onClick={() => this.setState({ size: 'Small' })}>Small</div>
                     <div onClick={() => this.setState({ size: 'Medium' })}>Medium</div>
                     <div onClick={() => this.setState({ size: 'Large' })}>Large</div>
-                    <button>submit</button>
+                    <button className="btnsub">submit</button>
                 </form>
                 {/* <div onClick={() => this.setState({size: 'Small'})}>Small</div>
                 <div onClick={() => this.setState({size: 'Medium'})}>Medium</div>
