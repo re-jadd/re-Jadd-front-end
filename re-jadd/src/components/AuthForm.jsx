@@ -18,7 +18,7 @@ class AuthForm extends Component {
   }
 
   handleRequest(user) {
-    let apiUrl = "http://localhost:3000/rapi/";
+    let apiUrl = "http://localhost:3000/rapi";
 
     apiUrl += this.props.form === "signup" ? "/users" : "/auth";
     console.log(apiUrl);

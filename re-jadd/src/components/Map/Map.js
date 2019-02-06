@@ -32,8 +32,13 @@ export class MapContainer extends Component {
       });
     }
 
+
    // console.log(this.state)
   };
+
+  handleLocation(data){
+    this.props.handleLocation(data)
+  }
   
 
 
@@ -43,6 +48,7 @@ export class MapContainer extends Component {
       <CurrentLocation
         centerAroundCurrentLocation
         google={this.props.google}
+        handleLocation={this.handleLocation.bind(this)}
       >
       
       {/* <Map

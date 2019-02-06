@@ -50,8 +50,8 @@ class EditProfile extends Component {
                     <label>Password</label><input type="password" name="password" onChange={this.handleChange.bind(this)} placeholder={this.props.user.password} />
                     <button>submit</button>
                 </form>
-                <Map/>
-                <CurrentLocation handleLocation={this.handleLocation.bind(this)}/>
+                <Map handleLocation={this.handleLocation.bind(this)} />
+                {/* <CurrentLocation handleLocation={this.handleLocation.bind(this)}/> */}
             </div>
         );
     }
