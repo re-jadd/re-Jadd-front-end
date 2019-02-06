@@ -6,6 +6,7 @@ import Profile from "./components/Profile";
 import "./App.css";
 import { setJwt, getJwt } from "./services/authService";
 import AdminShow from './components/Admin/AdminShow';
+import Guide from "./components/Guide";
 
 class App extends Component {
   constructor() {
@@ -138,7 +139,14 @@ class App extends Component {
           {/* <AdminShow/> */}
         </div>
       )
-    } else if (this.state.user === null) {
+    } else if (this.state.activePage === 'guide') {
+      return (
+      <div>
+       <Guide />
+      </div>
+      )
+    }
+    else if (this.state.user === null) {
       return (
       <div>
         <AuthForm form={this.state.form} onLogin={this.login} />

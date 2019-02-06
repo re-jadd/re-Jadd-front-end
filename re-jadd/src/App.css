@@ -75,7 +75,7 @@ input, select, textarea {
     border: none;
     border-radius: 4px;
     cursor: pointer;
-    align-items: 
+
   }
   
 .bttn{
@@ -110,4 +110,54 @@ input, select, textarea {
     height: 90%;
     width: 100%;
     position:absolute; 
+}
+.WCWR{
+  text-align: center;
+}
+/* .pBox{
+  position: relative; 
+
+
+} */
+.basket{
+  position: absolute; 
+  margin-right: 0px; 
+  width: 155px; 
+  height: 81px; 
+  right: 0;
+  bottom: 0;
+     
+}
+
+
+
+
+.card{
+  position:relative;
+  margin:90px;
+  padding: 100px;
+  background-color:white;
+  border: #AFD7CD;
+  
+
+}
+
+.Can{
+  position: absolute;
+  height: 70px;
+  left:1200px;
+  top:0;
+  bottom: 0;
+  -webkit-animation: mover 2s infinite  alternate;
+    animation: mover 1s infinite  alternate;
+}
+@-webkit-keyframes mover {
+    0% { transform: translateY(0); }
+    100% { transform: translateY(-20px); }
+}
+@keyframes mover {
+    50% { transform: translateY(10px); }
+    100% { transform: translateY(150px); }
+
+  
 }
