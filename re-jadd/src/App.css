@@ -83,18 +83,55 @@ padding: 0px 30px;
 
 .card{
   position:relative;
-  margin:90px;
-  padding: 100px;
+  margin:20px;
+  padding: 20px;
   background-color:white;
   border: #AFD7CD;
-  
+}
+.PlasticBag{
+  position: absolute;
+  height: 70px;
+  left:1250px;
+  top:0;
+  bottom: 0;
+  -webkit-animation: mover 2s infinite  alternate;
+    animation: mover 1.5s infinite  alternate;
+}
+@-webkit-keyframes mover {
+    0% { transform: translateY(0); }
+    100% { transform: translateY(-20px); }
+}
+@keyframes mover {
+    60% { transform: translateY(10px); }
+    100% { transform: translateY(150px); }
 
 }
 
-.Can{
+
+
+.PlasticDrink{
   position: absolute;
   height: 70px;
-  left:1200px;
+  left:1350px;
+  top:0;
+  bottom: 0;
+  -webkit-animation: mover 2s infinite  alternate;
+    animation: mover 2s infinite  alternate;
+}
+@-webkit-keyframes mover {
+    0% { transform: translateY(0); }
+    100% { transform: translateY(-20px); }
+}
+@keyframes mover {
+    50% { transform: translateY(10px); }
+    100% { transform: translateY(150px); }
+
+}
+
+.PlasticBottle{
+  position: absolute;
+  height: 70px;
+  left:1320px;
   top:0;
   bottom: 0;
   -webkit-animation: mover 2s infinite  alternate;
@@ -109,4 +146,123 @@ padding: 0px 30px;
     100% { transform: translateY(150px); }
 
   
+}
+
+.PaperBag{
+  position: absolute;
+  height: 50px;
+  left:1250px;
+  top:0;
+  bottom: 0;
+  -webkit-animation: mover 1s infinite  alternate;
+    animation: mover 1.2s infinite  alternate;
+}
+@-webkit-keyframes mover {
+    0% { transform: translateY(0); }
+    100% { transform: translateY(-20px); }
+}
+@keyframes mover {
+    50% { transform: translateY(10px); }
+    100% { transform: translateY(150px); }
+
+}
+
+.PaperTwist{
+  position: absolute;
+  height: 50px;
+  left:1305px;
+  top:0;
+  bottom: 0;
+  -webkit-animation: mover 1.5s infinite  alternate;
+    animation: mover 1.5s infinite  alternate;
+}
+@-webkit-keyframes mover {
+    0% { transform: translateY(0); }
+    100% { transform: translateY(-20px); }
+}
+@keyframes mover {
+    50% { transform: translateY(10px); }
+    100% { transform: translateY(200px); }
+}
+
+.PaperT{
+  position: absolute;
+  height: 50px;
+  left:1350px;
+  top:0;
+  bottom: 0;
+  -webkit-animation: mover 1s infinite  alternate;
+    animation: mover 1s infinite  alternate;
+}
+@-webkit-keyframes mover {
+    0% { transform: translateY(0); }
+    100% { transform: translateY(-20px); }
+}
+@keyframes mover {
+    50% { transform: translateY(10px); }
+    100% { transform: translateY(220px); }
+
+}
+
+.ElectronicCable{
+  position: absolute;
+  height: 130px;
+  left:1214px;
+  top:0;
+  bottom: 0;
+  -webkit-animation: mover 1s infinite  alternate;
+    animation: mover 1.2s infinite  alternate;
+}
+@-webkit-keyframes mover {
+    0% { transform: translateY(0); }
+    100% { transform: translateY(-20px); }
+}
+@keyframes mover {
+    50% { transform: translateY(10px); }
+    100% { transform: translateY(180px); }
+
+}
+
+.ElectronicUsb{
+  position: absolute;
+  height: 120px;
+  left:1265px;
+  top:0;
+  bottom: 0;
+  -webkit-animation: mover 1.5s infinite  alternate;
+    animation: mover 1.5s infinite  alternate;
+}
+@-webkit-keyframes mover {
+    0% { transform: translateY(0); }
+    100% { transform: translateY(-20px); }
+}
+@keyframes mover {
+    50% { transform: translateY(10px); }
+    100% { transform: translateY(190px); }
+}
+
+.ElectronicHeadphones{
+  position: absolute;
+  height: 130px;
+  left:1300px;
+  top:0;
+  bottom: 0;
+  -webkit-animation: mover 2s infinite  alternate;
+    animation: mover 1s infinite  alternate;
+}
+@-webkit-keyframes mover {
+    0% { transform: translateY(0); }
+    100% { transform: translateY(-20px); }
+}
+@keyframes mover {
+    50% { transform: translateY(10px); }
+    100% { transform: translateY(170px); }
+
+}
+.p{
+  size: 50px;
+  width: 70%;
+}
+.Plastic{
+  width: 50%;
 }
