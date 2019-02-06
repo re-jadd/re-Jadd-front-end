@@ -17,7 +17,7 @@ const NavBar = ({ user, changeForm, logout, getProducts , changeActivePage }) =>
                                     <div >Why Recycling?</div>
                                 </li>
                                 <li  onClick={() =>  { changeForm("services") ;  changeActivePage("profile") }}>
-                                <div>Profile</div>
+                                <div>Start Recycling</div>
                             </li>
 
                                 <li onClick={() => {getProducts() ;  changeActivePage("guide")}}>
@@ -43,7 +43,7 @@ const NavBar = ({ user, changeForm, logout, getProducts , changeActivePage }) =>
                             </li>
 
                             <li className="nav-item active" onClick={() => {getProducts()  ;  changeActivePage("profile")}}>
-                                <div>Profile</div>
+                                <div>Start Recycling</div>
                             </li>
                             <li className="nav-item active" onClick={() => { getProducts() ;  changeActivePage("guide")}}>
                                 <div>Recycling Guide</div>

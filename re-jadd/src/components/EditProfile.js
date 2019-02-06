@@ -48,7 +48,7 @@ class EditProfile extends Component {
                     <i className="material-icons" style={{ "fontsize": "36px" }} >email</i><input type="text" name="email" onChange={this.handleChange.bind(this)} placeholder={this.props.user.email} /><hr />
                     <i className="material-icons" style={{ "fontsize": "36px" }} >phone</i><input type="number" name="phone" onChange={this.handleChange.bind(this)} placeholder={this.props.user.phone} />
                     <label>Password</label><input type="password" name="password" onChange={this.handleChange.bind(this)} placeholder={this.props.user.password} />
-                    <button>submit</button>
+                    <button className="btnsub">submit</button>
                 </form>
                 <Map handleLocation={this.handleLocation.bind(this)} />
                 {/* <CurrentLocation handleLocation={this.handleLocation.bind(this)}/> */}
