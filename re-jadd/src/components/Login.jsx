@@ -2,12 +2,12 @@ import React from "react";
 
 const Login = props => {
   return (
-    <div>
+    <div className="form">
       <h1>Login</h1>
-      <form onSubmit={props.handleSubmit}>
+      <form  onSubmit={props.handleSubmit}>
         {props.renderInput("email", "Email")}
         {props.renderInput("password", "Password", "password")}
-        <button className="btn btn-primary"> Login </button>
+        <button className="btnsub"> Login </button>
       </form>
     </div>
   );

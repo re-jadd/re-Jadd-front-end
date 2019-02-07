@@ -96,8 +96,16 @@ class AdminShow extends Component {
         const userData = this.state.users.map(el => {
             console.log(el)
             return (
-                <div>
+                <div className="table">
+                <table id="customers">
+                    <tr>
+                        <td>Name</td>
+                        <td>Email</td>
+                        <td>Phone</td>
+                    </tr>
+
                     <ShowData user={el} key={el.id} />
+                    </table>
                 </div>
             )
         })
