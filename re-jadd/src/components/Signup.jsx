@@ -3,7 +3,8 @@ import Map from "./Map/Map";
 
 const Signup = ({ renderInput, handleSubmit }) => {
   return (
-    <div>
+    <div className="form">
+          <h1>Sign Up</h1>
       <form onSubmit={handleSubmit}>
         {renderInput("name", "Name")}
         {renderInput("email", "Email")}
@@ -11,7 +12,7 @@ const Signup = ({ renderInput, handleSubmit }) => {
         {renderInput("phone", "Phone")}
         {renderInput("location", "Location")}
 
-        <button className="btn btn-primary"> SignUp </button>
+        <button className="btnsub"> SignUp </button>
       </form>
       {/* <Map/> */}
     </div>
