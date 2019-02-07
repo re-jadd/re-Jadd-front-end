@@ -7,6 +7,10 @@ import "./App.css";
 import { setJwt, getJwt } from "./services/authService";
 import AdminShow from './components/Admin/AdminShow';
 import Guide from "./components/Guide";
+import Why from "./components/Why";
+import Head from "./components/images/head.jpeg";
+
+
 
 class App extends Component {
   constructor() {
@@ -120,15 +124,17 @@ class App extends Component {
 
   getProducts = () => { };
 
+
+
   renderShow() {
     if (this.state.user) {
-      if(this.state.user.is_admin === true){
+      if (this.state.user.is_admin === true) {
         return (
           <div>
             <AdminShow />
           </div>
         )
-      } 
+      }
     }
     console.log(this.state)
     if (this.state.activePage === 'profile' && this.state.user) {
@@ -141,16 +147,30 @@ class App extends Component {
       )
     } else if (this.state.activePage === 'guide') {
       return (
-      <div>
-       <Guide />
-      </div>
+        <div>
+          <Guide />
+        </div>
       )
+    }
+    else if (this.state.activePage === 'home') {
+      return (
+        <div>
+          <Why />
+          <div className="container-img">
+          <img className="Head-page" src={ Head } />
+          <button className="btn" onClick={() => {this.setState({activePage: 'profile'})}}>Save The World </button>
+          </div>
+          
+
+        </div>
+      )
+
     }
     else if (this.state.user === null) {
       return (
-      <div>
-        <AuthForm form={this.state.form} onLogin={this.login} />
-      </div>
+        <div>
+          <AuthForm form={this.state.form} onLogin={this.login} />
+        </div>
       )
     }
   }
@@ -174,12 +194,12 @@ class App extends Component {
 
           <div className="container">
 
-          {this.state ?  this.renderShow() : <AuthForm form={this.state.form} onLogin={this.login} />}
+            {this.state ? this.renderShow() : <AuthForm form={this.state.form} onLogin={this.login} />}
 
             {/* { this.state.activePage === "profile" ? }
           */}
-             {/* {this.state.activePage === 'profile' ? <Profile user={this.state.user} handleEdit={this.handleEdit.bind(this)} handleRequest={this.handleRequest.bind(this)} /> : ''} */}
-             {/* {this.state.user ? (
+            {/* {this.state.activePage === 'profile' ? <Profile user={this.state.user} handleEdit={this.handleEdit.bind(this)} handleRequest={this.handleRequest.bind(this)} /> : ''} */}
+            {/* {this.state.user ? (
               <div className="profile">
 
                 <Profile user={this.state.user} handleEdit={this.handleEdit.bind(this)} handleRequest={this.handleRequest.bind(this)} /></div>
